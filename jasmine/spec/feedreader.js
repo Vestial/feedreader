@@ -88,8 +88,9 @@ $(
       beforeEach(function(done) {
         loadFeed(0, done);
       });
-      it("loaded on page", function() {
-        expect($(".feed").is(":empty")).toBe(false);
+      it("loaded on page", function(done) {
+        expect($(".feed .entry").length).toBeGreaterThan(0);
+        done();
       });
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
